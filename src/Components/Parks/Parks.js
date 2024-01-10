@@ -10,8 +10,8 @@
 //url website
 
 //to favorite: we will need the park id!
-
-import '../index.css'
+//curl -X GET "https://developer.nps.gov/api/v1/campgrounds" -H "accept: application/json"
+import '../../index.css'
 import SinglePark from '../SinglePark/SinglePark'
 
 export default function Parks({parks, selectPark, navigate}) {
@@ -37,8 +37,10 @@ export default function Parks({parks, selectPark, navigate}) {
         )
     })
   return (
-    <div className='parks-container'>
-      {displayParks}
+    <div>
+      <div className='parks-container'>
+        {displayParks}
+      </div>
     </div>
   )
 }

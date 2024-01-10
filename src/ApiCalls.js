@@ -9,3 +9,9 @@ export function getParkData() {
         })
     )
 }
+
+//camp ground url that isn't li
+//https://developer.nps.gov/api/v1/campgrounds?api_key=KgfnACP2f09gBqEMUsNGRWvjNFxJkQPuXT9kVb0w
+
+//additional apis that have other info:
+//https://developer.nps.gov/api/v1/thingstodo?api_key=KgfnACP2f09gBqEMUsNGRWvjNFxJkQPuXT9kVb0w

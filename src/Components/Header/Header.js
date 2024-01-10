@@ -1,4 +1,4 @@
-{/* try to italicize */}
+import '../../index.css'
 
 export default function Header() {
     return (

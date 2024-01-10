@@ -1,4 +1,5 @@
 /// import './SinglePark.css'
+import PropTypes from 'prop-types';
 import '../../index.css'
 import { Link } from 'react-router-dom'
 
@@ -16,11 +17,26 @@ export default function SinglePark({fullName, addressLine, city, stateCode, post
         src={image} alt={altImageText}
         ></img>
 
-        <p>{imageTitle}: {imageCaption}</p>
-        <p>Address: {addressLine} <br/> 
+        <p>{imageTitle}: {imageCaption} <br/> 
+         Address: {addressLine} <br/> 
         {`${city}, ${stateCode} ${postalCode}`}</p>
     </button>
     </Link>
   )
 }
 
+//done
+SinglePark.propTypes = {
+  // id: PropTypes.number.isRequired,
+  fullName: PropTypes.string.isRequired,
+  addressLine: PropTypes.string.isRequired,
+  city: PropTypes.string.isRequired,
+  stateCode: PropTypes.string.isRequired,
+  postalCode: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  altImageText: PropTypes.string.isRequired,
+  imageCaption: PropTypes.string.isRequired,
+  imageTitle: PropTypes.string.isRequired,
+  selectPark: PropTypes.func.isRequired, 
+  navigate: PropTypes.func.isRequired
+}

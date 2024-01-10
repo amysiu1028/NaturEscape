@@ -1,4 +1,4 @@
-
+import PropTypes from 'prop-types';
 import { useState } from 'react'
 
 export default function SearchBar({searchParks, navigate}) {
@@ -30,3 +30,7 @@ export default function SearchBar({searchParks, navigate}) {
   )
 }
 
+SearchBar.propTypes = {
+  searchParks: PropTypes.func.isRequired,
+  navigate: PropTypes.func.isRequired
+}

@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import '../../index.scss'
+import './FilteredParks.scss'
 import SinglePark from "../SinglePark/SinglePark"
 import { Link } from 'react-router-dom'
 
@@ -32,18 +33,14 @@ export default function FilteredParks({filteredParks, selectPark, navigate}) {
         </Link>
         <h2>There are no parks with this name</h2>
       </div>) : (
-      <div className='filtered-button-container'>
-        <Link to='/'> 
-            <button className='back-to-home-button'>Back To Homepage</button>
-        </Link>
         <div className='content-container'>
-            <div>
-              <div className='filtered-parks-container'>
-                {displayFilteredParks}
-              </div>
+            <Link to='/'> 
+              <button className='filter-page-back-to-home-button'>Back To Homepage</button>
+            </Link>
+            <div className='filtered-parks-container'>
+              {displayFilteredParks}
             </div>
         </div>
-      </div>
         )}
     </div>
   )

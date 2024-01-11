@@ -21,24 +21,6 @@ code {
   overflow-x: hidden; 
 }
 
-// .parks-container {
-//   padding: 100px;
-//   align-content: space-evenly;
-//   grid-gap: 100px;
-//   grid-template-columns: repeat(2, 1fr); /* Two columns with equal width */
-//   // overflow-y: auto;
-//   justify-content: center;
-// }
-
-// .filtered-parks-container {
-//   padding: 100px;
-  
-//   align-content: space-evenly;
-//   grid-gap: 100px;
-//   overflow-y: auto;
-//   justify-content: center;
-// }
-
 .main-info-container {
   width: 638px;
   height: 351px;
@@ -65,15 +47,16 @@ code {
 }
 
 .dot {
-  height: 18px;
-  width: 18px;
+  height: 5px;
+  width: 5px;
   margin: 0 10px;
-  background-color: #bbb;
-  border-radius: 45%;
-  border: 1px solid pink;
+  background-color: #46485d;
+  border-radius: 50%;
+  border: -2px solid #2d325e;
   /* display: inline-block; */
   cursor: pointer;
   margin-left: 18px;
+  padding: 10px;
 }
 
 .dot.active {
@@ -122,8 +105,8 @@ code {
 }
 
 .header-container {
-  height: 50vh;
-  margin: 50px;
+  height: 30vh;
+  margin: 10px;
 }
 
 // .header-container p {
@@ -131,24 +114,30 @@ code {
 // }
 
 //in app?
-.content-container {
-  // background-color: $containerColor;
-  // margin: 60px;
-  display:flex;
-  // grid-template-columns: repeat(2, 1fr); /* Two columns with equal width */
-  // grid-gap: 100px;
-  justify-content: center;
-}
+// .content-container {
+//   // background-color: $containerColor;
+//   // margin: 60px;
+//   display:flex;
+//   // grid-template-columns: repeat(2, 1fr); /* Two columns with equal width */
+//   // grid-gap: 100px;
+//   justify-content: center;
+// }
 
 // .filtered-content-container {
 //     // background-color: $containerColor;
 //     margin: -50px;
 // }
-.filtered--container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+// .filtered-button-container {
+//   display: flex;
+//   flex-direction: column-reverse;
+//   align-items: center;
+// }
+
+// .filtered-button-container {
+//     flex-direction: column-reverse;
+//     align-items: center;
+// }
+
 
 .pic-text-container {
   display:flex;
@@ -162,11 +151,43 @@ code {
   height: 25vh;
 }
 
-.back-to-home-button {
-  padding: 20px;
-  font-family: $fontFamily;
-  border-radius: 10px;
+.content-container {
+  margin: 60px;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
+
+.back-to-home-button,
+.filter-page-back-to-home-button,
+.parkdetail-back-to-home-button {
+  // position: relative;
+  // bottom: 10px;
+  // left: 10%;
+  // transform: translateX(-50%);
+  // z-index: 1; 
+  padding: 20px;
+  font-family: "PT Serif";
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: hsla(233.88, 50.21%, 10.47%, 0.76);
+  font-size: 20px;
+  font-weight: bold;
+  // margin-top: 100px;
+  margin-bottom: 60px;
+  // left: 90%;
+  // transform: translateX(175%);
+}
+
+.parkdetail-back-to-home-button {
+  // left: 50%;
+  transform: translateX(275%);
+}
+
+// .filter-page-back-to-home-button {
+//   transform: translateX(175%);
+// }
 
 button {
   font-family: $fontFamily;
@@ -189,8 +210,8 @@ button {
  
 @media (min-width: 868px) {
   .parks-container, .filtered-parks-container {
-    position: relative;
-    z-index: 1; 
+    // position: relative;
+    // z-index: 1; 
     width: 100vw;
     height: 100vh;
     display: grid;
@@ -208,13 +229,10 @@ button {
   flex-direction: column;
   align-items: center;
   color: white;
-  text-shadow: -1px -1px 0 blue, 1px -1px 0 blue, -1px 1px 0 blue, 1px 1px 0 blue;
+  text-shadow: -1px -1px 0 $containerColor, 1px -1px 0 $containerColor, -1px 1px 0 $containerColor, 1px 1px 0 $containerColor;
 }
 
-.welcome-message {
-  color: white;
-  text-shadow: -1px -1px 0 blue, 1px -1px 0 blue, -1px 1px 0 blue, 1px 1px 0 blue;
-}
+
 
 .server-message-container {
   margin-top: 50px;
@@ -223,6 +241,19 @@ button {
 .logo {
   margin-top: -600px;
 }
+
+input {
+  background-color: $containerColor;
+  border: $containerColor;
+  // border: 1px solid white; /* Add a 1px solid white border */
+}
+
+input, input::placeholder {
+  color: white;
+  font-size: 20px;
+  font-family: $fontFamily;
+}
+
 .input-search-container {
   display: flex;
   justify-content: center;
@@ -244,5 +275,11 @@ button {
 .wrap-header-search {
   display: flex;
   flex-direction: column;
-
+  align-items: center;
+  // justify-content: center;
 }
+
+a {
+  color: lightblue;
+}
+

@@ -26,11 +26,7 @@ export default function SearchBar({searchParks, navigate}) {
           value={searchInput}
           onChange={(e) => setSearchInput(e.target.value)}
           ></input>
-          {/* do an onClick for submit and on function for search to find
-          have to do conditional because if none then display, no parks under this name */}
-          {/* <Link to={`/${searchInput}`}> */}
-              {/* Use button onClick to trigger the search and navigation */}
-          <button type="button" onClick={() => navigateHistory()} >
+          <button className='search-img-background' type="button" onClick={() => navigateHistory()} >
             <img src={search} alt='Search Icon'></img>
           </button>
       </form>

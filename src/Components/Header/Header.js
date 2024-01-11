@@ -11,7 +11,6 @@ export default function Header() {
         </Link>
         {/* try to italicize */}
         <h2 className='welcome-message'>Welcome to your self exploration</h2>
-        <p className='welcome-message'>Scroll down below to click onto your next destination</p>
       </div>
     )
   }

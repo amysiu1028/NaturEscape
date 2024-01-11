@@ -1,3 +1,5 @@
+@import '../../styles/styles.scss';
+
 #scroll-container svg {
     position: relative;
     z-index: 3;
@@ -9,11 +11,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    // margin-top: 10px;
+}
+
+.scroll-on-filteredpage {
+    margin-top: 250px;
 }
 
 .scroll-down {
     color: white;
-    text-shadow: -1px -1px 0 blue, 1px -1px 0 blue, -1px 1px 0 blue, 1px 1px 0 blue;
+    text-shadow: -1px -1px 0 $containerColor, 1px -1px 0 $containerColor, -1px 1px 0 $containerColor, 1px 1px 0 $containerColor;
 }
 
 input {

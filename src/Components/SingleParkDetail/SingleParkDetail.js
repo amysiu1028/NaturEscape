@@ -108,14 +108,14 @@ export default function SingleParkDetail({selectedParkDetail}) {
                 Click here to navigate to its website
                 </a>
                 <h3>Operating Hours:</h3>
-                <p>{selectedParkDetail.operatingHours.length > 0 ? (<p>selectedParkDetail.operatingHours[0].description</p>) : (<p> There is no information on operating hours. Please <a href={selectedParkDetail.url} target="_blank" rel="noopener noreferrer">
+                <p>{selectedParkDetail.operatingHours.length > 0 ? (<p>{selectedParkDetail.operatingHours[0].description}</p>) : (<p> There is no information on operating hours. Please <a href={selectedParkDetail.url} target="_blank" rel="noopener noreferrer">
                 click here </a> to navigate to their website to view operating hours. Sorry for the inconvenience. </p>)} <br/><br/>
                 {selectedParkDetail.weatherInfo}
                 </p>
             </section>
         </div>
         <Link to='/'> 
-                <button className='back-to-home-button' >Back To Homepage</button>
+                <button className='parkdetail-back-to-home-button' >Back To Homepage</button>
         </Link>
     </div>
   )

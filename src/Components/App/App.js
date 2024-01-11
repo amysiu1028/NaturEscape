@@ -1,17 +1,10 @@
 //Next steps:
 //write if nothing is entered in input then display, please enter, something in input (searchBar component)
-
-
-//style details page
 //RQ! make it responsive!!!
-
 //cypress testing
 
-
-
 //colors
-//fix the search bar
-//style error pages!
+//check error pages!
 
 //README
 // Be deployed using Vercel, Heroku, Surge, or any other similar service
@@ -110,18 +103,22 @@ function App() {
           <Route path="/" element={
               <div className='wrap-header-search'>
                   <Header />
+                  <p className='welcome-message'>Scroll down below to click onto your next destination</p>
                   <SearchBar searchParks={searchParks} navigate={navigate}/>
-                <div className='content-container'>
+                  <div className='content-container'>
                   <Parks parks={parks} selectPark={selectPark} navigate={navigate}/>
                 </div>
               </div>
             }
           />
           <Route path='/:filtered' element={
-            <div>
+            <div className='wrap-header-search'h>
                   <Header />
                   {/* <SearchBar searchParks={searchParks} navigate={navigate}/> */}
-                  <Scroll/>
+                  <p className='welcome-message'>Scroll down below to view and click onto your searched destination</p>
+                  <div className='scroll-on-filteredpage'>
+                    <Scroll/>
+                  </div>
               <div>
                 <FilteredParks filteredParks={filteredParks} selectPark={selectPark} navigate={navigate} />
               </div>

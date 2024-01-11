@@ -1,11 +1,17 @@
-import '../../index.css'
+import '../../index.scss'
+import './Header.scss'
+import logo2 from '../../images/logo.png'
+import { Link } from 'react-router-dom'
 
 export default function Header() {
     return (
-      <div>
-        <h1>NaturEscape</h1>
+      <div className='header-container'>
+        <Link to='/'>
+            <img className='logo' src={logo2} alt='Logo states NatureEscape'></img>
+        </Link>
         {/* try to italicize */}
-        <p>Welcome to your self exploration</p>
+        <h2 className='welcome-message'>Welcome to your self exploration</h2>
+        <p className='welcome-message'>Scroll down below to click onto your next destination</p>
       </div>
     )
   }

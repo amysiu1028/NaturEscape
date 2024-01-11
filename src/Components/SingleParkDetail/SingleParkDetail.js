@@ -1,6 +1,7 @@
 // import React from 'react'
 import PropTypes from 'prop-types';
-import '../../index.css'
+import '../../index.scss'
+import './SingleParkDetail.scss'
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 
@@ -36,12 +37,12 @@ export default function SingleParkDetail({selectedParkDetail}) {
 
     if (!selectedParkDetail) {
         return(
-            <>
-                <p>404 Page Not Found: The page you are looking for doesn't exist</p>
+            <div className='message-container'>
+                <p>404 Page Not Found: The page you are looking for doesn't exist.</p>
                 <Link to='/'>
-                    <button className='back-to-home'>Back to Homepage</button>
+                <button className='back-to-home-button'>Back to Homepage</button>
                 </Link>
-            </>
+            </div>
         )
     }
 
@@ -75,16 +76,13 @@ export default function SingleParkDetail({selectedParkDetail}) {
     })
 
   return (
-    <div>
+    <div className='single-park-detail-page'>
         <div className='singlepark-mainpage'>
-            <Link to='/'> 
-                <button>Back To Homepage</button>
-            </Link>
             <section className='image-slider'>
                 <ul>{displayImages}</ul>
                 <div className='dot-indicators'>{dotIndicators}</div>
             </section>
-            <section>
+            <section className='park-detail-text-container'>
                 <h2>{selectedParkDetail.fullName}</h2>
                 <h3>ParkCode: {selectedParkDetail.parkCode}</h3>
                 <h4>History:</h4>
@@ -116,6 +114,9 @@ export default function SingleParkDetail({selectedParkDetail}) {
                 </p>
             </section>
         </div>
+        <Link to='/'> 
+                <button className='back-to-home-button' >Back To Homepage</button>
+        </Link>
     </div>
   )
 }

@@ -1,0 +1,248 @@
+@import './styles/styles.scss';
+
+body {
+  margin: 0;
+  font-family: $fontFamily;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.main-page {
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden; 
+}
+
+// .parks-container {
+//   padding: 100px;
+//   align-content: space-evenly;
+//   grid-gap: 100px;
+//   grid-template-columns: repeat(2, 1fr); /* Two columns with equal width */
+//   // overflow-y: auto;
+//   justify-content: center;
+// }
+
+// .filtered-parks-container {
+//   padding: 100px;
+  
+//   align-content: space-evenly;
+//   grid-gap: 100px;
+//   overflow-y: auto;
+//   justify-content: center;
+// }
+
+.main-info-container {
+  width: 638px;
+  height: 351px;
+  background-color: $containerColor;
+}
+
+.pic-text-container p {
+  width: 80%;
+  height: 20%;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.image-size {
+  width: 390px;
+  height: 250px;
+}
+
+.dot-indicators {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.dot {
+  height: 18px;
+  width: 18px;
+  margin: 0 10px;
+  background-color: #bbb;
+  border-radius: 45%;
+  border: 1px solid pink;
+  /* display: inline-block; */
+  cursor: pointer;
+  margin-left: 18px;
+}
+
+.dot.active {
+  background-color: #7c0909;
+}
+
+.image-slider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+  padding: 50px;
+}
+
+.park-detail-text-container {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  height: 100%;
+  padding: 50px;
+}
+
+.image-info-container {
+  display: flex; 
+  flex-direction: column;
+  align-items: center;
+}
+
+.singlepark-mainpage {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.location-container {
+  display: flex;
+}
+
+//THIS IS WHERE WE WILL ADD EACH COMPONENT TO EACH COMPONENT::after
+#animation-container {
+  position: fixed;
+  width: 100%;
+  z-index: -1;
+}
+
+.header-container {
+  height: 50vh;
+  margin: 50px;
+}
+
+// .header-container p {
+//   margin: 0;
+// }
+
+//in app?
+.content-container {
+  // background-color: $containerColor;
+  // margin: 60px;
+  display:flex;
+  // grid-template-columns: repeat(2, 1fr); /* Two columns with equal width */
+  // grid-gap: 100px;
+  justify-content: center;
+}
+
+// .filtered-content-container {
+//     // background-color: $containerColor;
+//     margin: -50px;
+// }
+.filtered--container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pic-text-container {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+//Parks
+.main-image-size {
+  width: 24vw;
+  height: 25vh;
+}
+
+.back-to-home-button {
+  padding: 20px;
+  font-family: $fontFamily;
+  border-radius: 10px;
+}
+
+button {
+  font-family: $fontFamily;
+  color: white;
+  // border-radius: 5%;
+  outline: none;
+  border: 2px solid $containerColor; 
+  padding: 10px 20px; 
+}
+
+// .scroll-down--text-container {
+//   position: absolute;
+//   bottom: 20px;
+//   left: 50%;
+//   transform: translateX(-50%);
+//   background-color: rgba(255, 255, 255, 0.8); /* Adjust the color and opacity as needed */
+//   padding: 10px;
+//   border-radius: 5px;
+// }
+ 
+@media (min-width: 868px) {
+  .parks-container, .filtered-parks-container {
+    position: relative;
+    z-index: 1; 
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns with equal width */
+    place-items: center; /* Center both horizontally and vertically */
+    // gap: 0px;
+    // padding: 20px;
+    // margin-left: 20px;
+  }
+}
+
+.message-container, 
+.server-message-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  text-shadow: -1px -1px 0 blue, 1px -1px 0 blue, -1px 1px 0 blue, 1px 1px 0 blue;
+}
+
+.welcome-message {
+  color: white;
+  text-shadow: -1px -1px 0 blue, 1px -1px 0 blue, -1px 1px 0 blue, 1px 1px 0 blue;
+}
+
+.server-message-container {
+  margin-top: 50px;
+}
+
+.logo {
+  margin-top: -600px;
+}
+.input-search-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+  margin-top: 50px;
+}
+
+.search-scroll-container {
+  height: 20vh;
+  margin: 200px;
+}
+
+.header-container,
+.input-search-container {
+  margin: 0;
+  padding: 0;
+}
+
+.wrap-header-search {
+  display: flex;
+  flex-direction: column;
+
+}

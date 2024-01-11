@@ -1,6 +1,6 @@
 /// import './SinglePark.css'
 import PropTypes from 'prop-types';
-import '../../index.css'
+import '../../index.scss'
 import { Link } from 'react-router-dom'
 
 export default function SinglePark({fullName, addressLine, city, stateCode, postalCode, image, altImageText, imageCaption, imageTitle, selectPark, id, navigate}) {
@@ -12,14 +12,16 @@ export default function SinglePark({fullName, addressLine, city, stateCode, post
       navigate(`/parks/${id}`);
       }}>
         <h2>{fullName}</h2>
-        <img 
-        className='main-image-size' 
-        src={image} alt={altImageText}
-        ></img>
+        <div className="pic-text-container"> 
+          <img 
+          className='main-image-size' 
+          src={image} alt={altImageText}
+          ></img>
 
-        <p>{imageTitle}: {imageCaption} <br/> 
-         Address: {addressLine} <br/> 
-        {`${city}, ${stateCode} ${postalCode}`}</p>
+          <p className='main-image-text-container'>{imageTitle}: {imageCaption} <br/> 
+          Address: {addressLine} <br/> 
+          {`${city}, ${stateCode} ${postalCode}`}</p>
+        </div>
     </button>
     </Link>
   )

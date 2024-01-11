@@ -12,11 +12,11 @@
 //to favorite: we will need the park id!
 //curl -X GET "https://developer.nps.gov/api/v1/campgrounds" -H "accept: application/json"
 import PropTypes from 'prop-types';
-import '../../index.css'
+import '../../index.scss'
+import './Parks.scss'
 import SinglePark from '../SinglePark/SinglePark'
 
 export default function Parks({parks, selectPark, navigate}) {
-    console.log("parks",parks)
     const displayParks = parks.map((park) => {
         return (
             <SinglePark 

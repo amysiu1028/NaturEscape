@@ -1,45 +1,57 @@
 //Next steps:
-//1) Look at rest of project
-//2) find a way to fix the grid overflow - JAn
-//3) Go into park details
-//4) Add a way to favorite? add favorites? Or Have options for just Historic Sites, River, Monument, Park, Recreational Area, National Preserve, Memorial,
-//deploy your projects!
-
-//1) when searching and only put 1 letter, it doesn't show that one letter. -> it shows all of the words htat inlcude that letter!
-//async javascript - try to understand async and await more 
+//write if nothing is entered in input then display, please enter, something in input (searchBar component)
 
 
-//then add styling
-// App is responsive across mobile, tablet and desktop sizes
+//style details page
+//RQ! make it responsive!!!
 
 //cypress testing
+
+
+
+//colors
+//fix the search bar
+//style error pages!
+
+//README
 // Be deployed using Vercel, Heroku, Surge, or any other similar service
 
-//lottie?
-//parallax?
+//Need HELP:
+//= why does it not scroll down sometimes
+
 
 
 //Extra: 
-//add location feature
-//favicon - Jen - logo
-//add visited, want to visit section
+//add location search feature
+//add visited, want to visit section vs favorite?
+//when click search, can write, there are parks.length number of searches for 'this input'
 
+//issues:
 
-//README
-import '../../index.css'
+//When done:
+//research and ask about CSS - how to get better:
+//scroll-container:     left: 65%;   transform: translateX(-50%);
+//// Using left: 50% sets the left edge of the element to the middle of its containing element, and transform: translateX(-50%) then shifts the element horizontally by half of its own width in the reverse direction. This combination effectively centers the element horizontally.
+//async javascript - try to understand async and await more 
+
+import '../../index.scss'
+import lottie from "lottie-web";
 import { getParkData } from '../../ApiCalls';
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Header from '../Header/Header';
 import Parks from '../Parks/Parks';
 import SearchBar from '../SearchBar/SearchBar';
 import { Routes, Route, useNavigate } from 'react-router-dom'
 import FilteredParks from '../FilteredParks/FilteredParks';
 import SingleParkDetail from '../SingleParkDetail/SingleParkDetail';
+import NotFound from '../NotFound/NotFound';
+import Scroll from '../Scoll/Scroll';
 
 function App() {
   const [ parks, setParks ] = useState([])
   const [ filteredParks, setFilteredParks ] = useState([])
   const [ error, setError ] = useState("")
+
   // in many cases, it's often better to initialize state with null rather than an empty string ("") or an empty object ({}) if you want to represent an absence of data or an uninitialized state. 
   const [ selectedParkDetail, setSelectedParkDetail] = useState(null)
   const navigate = useNavigate();
@@ -54,6 +66,17 @@ function App() {
     .catch(error => {
       setError(error)
     })
+  }, [])
+
+  const background = useRef(null); 
+  useEffect(() => {
+      lottie.loadAnimation({
+          animationData: require('../../naturebackground.json'),
+          autoplay: true,
+          container: background.current,
+          loop: true,
+          renderer: 'svg'
+      })
   }, [])
 
   function searchParks(searchInput) {
@@ -78,31 +101,45 @@ function App() {
  
   return (
     <main className="main-page">
-      {/* {console.log("parks in App,",parks)} */}
-      <Routes>
-        <Route path="/" element={
-            <>
-              <Header />
-              <SearchBar searchParks={searchParks} navigate={navigate}/>
-              <Parks parks={parks} selectPark={selectPark} navigate={navigate}/>
-            </>
+    <div ref={background} id="animation-container"></div>
+    
+      {error ? <div className='server-message-container' >
+        <h2>Server is down, please try again later</h2> 
+      </div> : (
+        <Routes>
+          <Route path="/" element={
+              <div className='wrap-header-search'>
+                  <Header />
+                  <SearchBar searchParks={searchParks} navigate={navigate}/>
+                <div className='content-container'>
+                  <Parks parks={parks} selectPark={selectPark} navigate={navigate}/>
+                </div>
+              </div>
+            }
+          />
+          <Route path='/:filtered' element={
+            <div>
+                  <Header />
+                  {/* <SearchBar searchParks={searchParks} navigate={navigate}/> */}
+                  <Scroll/>
+              <div>
+                <FilteredParks filteredParks={filteredParks} selectPark={selectPark} navigate={navigate} />
+              </div>
+            </div>
           }
-        />
-        <Route path='/:filtered' element={
+          />
+          <Route path='/parks/:id' element={
           <>
-            <Header />
-            <SearchBar searchParks={searchParks} navigate={navigate}/>
-            <FilteredParks filteredParks={filteredParks} selectPark={selectPark} navigate={navigate}/>
+            <Header/>
+            <SingleParkDetail selectedParkDetail={selectedParkDetail}/>
           </>
-        }
-        />
-        <Route path='/parks/:id' element={<SingleParkDetail selectedParkDetail={selectedParkDetail}/>} 
-        />
-      </Routes>
+        }/>
+          <Route path='/parks/*' element={<NotFound/>}/>
+        </Routes>
+      )}
     </main>
   );
 }
 
-//  {error ? (<h2>404 Page Not Found: the page you are looking for doesn't exist</h2>
 
 export default App;

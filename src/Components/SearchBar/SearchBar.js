@@ -33,7 +33,7 @@ export default function SearchBar({searchParks, navigate}) {
           value={searchInput}
           onChange={(e) => setSearchInput(e.target.value)}
           ></input>
-          <button className='search-img-background' type="button" onClick={() => navigateHistory()} >
+          <button data-test='search-button' className='search-img-background' type="button" onClick={() => navigateHistory()} >
             <img data-test='search-icon' src={search} alt='Search Icon'></img>
             {console.log("search",search)}
           </button>

@@ -27,13 +27,15 @@ export default function SearchBar({searchParks, navigate}) {
     <div className='search-scroll-container'>
       <form className='input-search-container'>
           <input
+          data-test='search-input'
           type="text"
-          placeholder="Enter Name..."
+          placeholder="Enter Destination Name..."
           value={searchInput}
           onChange={(e) => setSearchInput(e.target.value)}
           ></input>
           <button className='search-img-background' type="button" onClick={() => navigateHistory()} >
-            <img src={search} alt='Search Icon'></img>
+            <img data-test='search-icon' src={search} alt='Search Icon'></img>
+            {console.log("search",search)}
           </button>
       </form>
       {errorMessage && <h2 className='error-message'>{errorMessage}</h2>}

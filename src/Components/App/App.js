@@ -1,31 +1,20 @@
 //Next steps:
-//write if nothing is entered in input then display, please enter, something in input (searchBar component)
-//RQ! make it responsive!!!
 //cypress testing
-
-//colors
-//check error pages!
 
 //README
 // Be deployed using Vercel, Heroku, Surge, or any other similar service
-
-//Need HELP:
-//= why does it not scroll down sometimes
-
-
 
 //Extra: 
 //add location search feature
 //add visited, want to visit section vs favorite?
 //when click search, can write, there are parks.length number of searches for 'this input'
 
-//issues:
-
 //When done:
 //research and ask about CSS - how to get better:
 //scroll-container:     left: 65%;   transform: translateX(-50%);
 //// Using left: 50% sets the left edge of the element to the middle of its containing element, and transform: translateX(-50%) then shifts the element horizontally by half of its own width in the reverse direction. This combination effectively centers the element horizontally.
 //async javascript - try to understand async and await more 
+//favoriting and visited, checked! Add and find out how to do?
 
 import '../../index.scss'
 import lottie from "lottie-web";
@@ -103,7 +92,7 @@ function App() {
           <Route path="/" element={
               <div className='wrap-header-search'>
                   <Header />
-                  <p className='welcome-message'>Scroll down below to click onto your next destination</p>
+                  <p className='welcome-message' data-test='mainpage-scroll-message'>Scroll down below to click onto your next destination</p>
                   <SearchBar searchParks={searchParks} navigate={navigate}/>
                   <div className='content-container'>
                   <Parks parks={parks} selectPark={selectPark} navigate={navigate}/>
@@ -115,7 +104,7 @@ function App() {
             <div className='wrap-header-search'h>
                   <Header />
                   {/* <SearchBar searchParks={searchParks} navigate={navigate}/> */}
-                  <p className='welcome-message'>Scroll down below to view and click onto your searched destination</p>
+                  <p data-test='filtered-scroll-message' className='welcome-message'>Scroll down below to view and click onto your searched destination</p>
                   <div className='scroll-on-filteredpage'>
                     <Scroll/>
                   </div>

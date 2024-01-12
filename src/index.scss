@@ -199,7 +199,8 @@ button {
 }
 
 .message-container, 
-.server-message-container {
+.server-message-container, 
+.error-message {
   display: flex;
   flex-direction: column;
   align-items: center;

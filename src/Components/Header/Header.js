@@ -10,7 +10,7 @@ export default function Header() {
             <img className='logo' src={logo2} alt='Logo states NatureEscape'></img>
         </Link>
         {/* try to italicize */}
-        <h2 className='welcome-message'>Welcome to your self exploration</h2>
+        <h2 className='welcome-message'>Embark on your journey of self-discovery</h2>
       </div>
     )
   }

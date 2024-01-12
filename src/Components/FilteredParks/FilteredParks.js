@@ -29,15 +29,15 @@ export default function FilteredParks({filteredParks, selectPark, navigate}) {
   return (
     <div>
       {!displayFilteredParks.length ? (<div className='message-container'> <Link to='/'> 
-            <button className='back-to-home-button'>Back To Homepage</button>
+            <button data-test='filterpage-backhome-button' className='back-to-home-button'>Back To Homepage</button>
         </Link>
         <h2>There are no parks with this name</h2>
       </div>) : (
-        <div className='content-container'>
+        <div data-test='filtered-button-parks-container' className='content-container'>
             <Link to='/'> 
-              <button className='filter-page-back-to-home-button'>Back To Homepage</button>
+              <button data-test='filterpage-backhome-button' className='filter-page-back-to-home-button'>Back To Homepage</button>
             </Link>
-            <div className='filtered-parks-container'>
+            <div data-test='filtered-parks-container' className='filtered-parks-container'>
               {displayFilteredParks}
             </div>
         </div>

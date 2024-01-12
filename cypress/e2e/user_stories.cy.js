@@ -34,9 +34,11 @@ describe('Display homepage', () => {
     .get("[data-test='mainpage-image']").last().should('have.attr','src','https://www.nps.gov/common/uploads/structured_data/2595FA12-DF7A-1B6C-55D8F41ABCA2E011.jpg')
   })
 
-  // it('should be able to show an error message letting user know to fill out search input if search field is empty preventing user from searching until they fill out the input fields', () => {
-    
-  // })
+  it('should be able to show an error message letting user know to fill out search input if search field is empty preventing user from searching until they fill out the input fields', () => {
+    cy.get("[data-test='search-input']").should('have.value', '')
+    cy.get("[data-test='search-button']").click()
+    cy.get("[data-test='search-error-message' ]").contains('Please fill out search input.')
+  })
 
   it('should be able fill out search input, click search button, and a show filtered park based on a specified search input', () => {
     // cy.get("[data-test='search-input']").should('have.attr', 'placeholder', 'Enter Destination Name...') 
@@ -61,12 +63,15 @@ describe('Display homepage', () => {
     .get("[data-test='filtered-parks-container']").first().contains('h2', 'Abraham Lincoln Birthplace National Historical Park')
     .get("[data-test='filtered-parks-container']").first().contains('The Memorial Building with fall colors: Over 200,000 people a year come to walk up the steps of the Memorial Building to visit the site where Abraham Lincoln was born. Address: 2995 Lincoln Farm Road Hodgenville, KY 42748')
     .get("[data-test='mainpage-image']").first().should('have.attr','src','https://www.nps.gov/common/uploads/structured_data/3C861078-1DD8-B71B-0B774A242EF6A706.jpg')
-
   })
  
-  // it('should be show a message letting user know that there are no parks based on the search input', () => {
-
-  // })
+  it('should be show a message letting user know that there are no parks based on the search input', () => {
+    cy.get("[data-test='search-input']").type('Zebra').should('have.value', 'Zebra')
+    cy.get("[data-test='search-button']").click()
+    cy.get("[data-test='filterpage-backhome-button']").scrollIntoView();
+    cy.get("[data-test='filterpage-backhome-button']").contains('button','Back To Homepage')
+    cy.get("[data-test='no-parks-message']").contains('h2','Sorry, there are no sites by this name.')
+  })
 })
 
 //   describe('Display Park Details Page', () => {

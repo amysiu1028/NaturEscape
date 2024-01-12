@@ -13,12 +13,12 @@ export default function SinglePark({fullName, addressLine, city, stateCode, post
       }}>
         <h2>{fullName}</h2>
         <div className="pic-text-container"> 
-          <img 
-          className='main-image-size' 
+          <img data-test='mainpage-image'
+          className='main-image-size'  
           src={image} alt={altImageText}
           ></img>
 
-          <p className='main-image-text-container'>{imageTitle}: {imageCaption} <br/> 
+          <p className='main-image-text-container'><strong>{imageTitle}:</strong> <br/> {imageCaption}. <br/> 
           Address: {addressLine} <br/> 
           {`${city}, ${stateCode} ${postalCode}`}</p>
         </div>

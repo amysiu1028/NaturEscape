@@ -38,7 +38,7 @@ export default function Parks({parks, selectPark, navigate}) {
         )
     })
   return (
-    <div>
+    <div data-test='all-parks'>
       <div data-test='parks-container' className='parks-container'>
         {displayParks}
       </div>

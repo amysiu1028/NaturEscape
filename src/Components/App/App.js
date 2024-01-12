@@ -1,6 +1,7 @@
 //Next steps:
 //cypress testing
 
+//responsive design: check texts are viewable when page gets smaller
 //README
 // Be deployed using Vercel, Heroku, Surge, or any other similar service
 

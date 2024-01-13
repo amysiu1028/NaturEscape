@@ -12,7 +12,7 @@ export default function SinglePark({fullName, addressLine, city, stateCode, post
   }
     return (
       <Link to={`/parks/${fullName}`}>
-      <button tabIndex='0' data-test='main-park-button' type='button' className='main-info-container' onClick={(event) => {handleClick(event)}}>
+      <button tabIndex={0} data-test='main-park-button' type='button' className='main-info-container' onClick={(event) => {handleClick(event)}}>
         <h2>{fullName}</h2>
         <div className="pic-text-container"> 
           <img data-test='mainpage-image' className='main-image-size'  

@@ -10,9 +10,6 @@ import search from '../../images/search.png'
 export default function SearchBar({searchParks, navigate}) {
     const [ searchInput, setSearchInput ] = useState("")
     const [ errorMessage, setErrorMessage ] = useState("")
-    // const navigate = useNavigate()
-      //to implemenet a search bar 
-  //create a functional component called searchBar
     function navigateHistory() {
       if (searchInput === '' || searchInput === ' ') {
         setErrorMessage('Please fill out search input.')
@@ -38,7 +35,7 @@ export default function SearchBar({searchParks, navigate}) {
             {console.log("search",search)}
           </button>
       </form>
-      {errorMessage && <h2 className='error-message'>{errorMessage}</h2>}
+      {errorMessage && <h2 data-test='search-error-message' className='error-message'>{errorMessage}</h2>}
         <Scroll/>
      </div>
   )

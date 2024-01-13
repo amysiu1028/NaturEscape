@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 
 export default function SingleParkDetail({selectedParkDetail}) {
+    console.log("selectedParkDetail",selectedParkDetail)
     const [ currentIndex, setCurrentIndex ] = useState(0);
     console.log("selectedParkDetail in Single Park Detail",selectedParkDetail);
     // const navigate = useNavigate();
@@ -55,13 +56,15 @@ export default function SingleParkDetail({selectedParkDetail}) {
                 style={{display: index === currentIndex ? 'block' : 'none'}}
                 >
                 <section className='image-info-container'>
-                    <h2>{image.title}</h2>
-                    <img  
-                    className='image-size'      
-                    src={image.url} 
-                    alt={image.altText}
-                    />
-                    <p>{image.caption}</p>  
+                    <div data-test='all-slider-info'>
+                        <h2>{image.title}</h2>
+                        <img data-test='slider-images'
+                        className='image-size'      
+                        src={image.url} 
+                        alt={image.altText}
+                        />
+                        <p>{image.caption}</p>  
+                    </div>
                 </section>
             </li>
         )
@@ -89,7 +92,7 @@ export default function SingleParkDetail({selectedParkDetail}) {
                 <p>{selectedParkDetail.description}</p>
                 <h4>Directions:</h4>
                 <p>{selectedParkDetail.directionsInfo}</p>
-                <a href={selectedParkDetail.directionsUrl} target="_blank" rel="noopener noreferrer">
+                <a data-test='directions-link' href={selectedParkDetail.directionsUrl} target="_blank" rel="noopener noreferrer">
                 More Information on Directions
                 </a>
                 <section className='location-container'>
@@ -100,16 +103,16 @@ export default function SingleParkDetail({selectedParkDetail}) {
                         </p>
                     </>
                     <>
-                        <h4>Location:</h4>
+                        <h4>Location: </h4>
                         <p>{selectedParkDetail.latLong}</p>
                     </>
                 </section>
                 <a href={selectedParkDetail.url} target="_blank" rel="noopener noreferrer">
                 Click here to navigate to its website
                 </a>
-                <h3>Operating Hours:</h3>
+                <h4>Operating Hours & Weather Information:</h4>
                 <p>{selectedParkDetail.operatingHours.length > 0 ? (<p>{selectedParkDetail.operatingHours[0].description}</p>) : (<p> There is no information on operating hours. Please <a href={selectedParkDetail.url} target="_blank" rel="noopener noreferrer">
-                click here </a> to navigate to their website to view operating hours. Sorry for the inconvenience. </p>)} <br/><br/>
+                click here </a> to navigate to their website to view operating hours. Sorry for the inconvenience. </p>)}
                 {selectedParkDetail.weatherInfo}
                 </p>
             </section>

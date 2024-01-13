@@ -4,10 +4,10 @@ import '../../index.scss'
 import { Link } from 'react-router-dom'
 
 export default function SinglePark({fullName, addressLine, city, stateCode, postalCode, image, altImageText, imageCaption, imageTitle, selectPark, id, navigate}) {
-
+  
     return (
-    <Link to={`/parks/${id}`}>
-    <button type='button' className='main-info-container' onClick={() => {
+    <Link to={`/parks/${fullName}`}>
+    <button data-test='main-park-button' type='button' className='main-info-container' onClick={() => {
       selectPark(id);
       navigate(`/parks/${id}`);
       }}>
@@ -18,7 +18,7 @@ export default function SinglePark({fullName, addressLine, city, stateCode, post
           src={image} alt={altImageText}
           ></img>
 
-          <p className='main-image-text-container'><strong>{imageTitle}:</strong> <br/> {imageCaption}. <br/> 
+          <p data-test='mainpage-text' className='main-image-text-container'><strong>{imageTitle}:</strong> <br/> {imageCaption} <br/> 
           Address: {addressLine} <br/> 
           {`${city}, ${stateCode} ${postalCode}`}</p>
         </div>

@@ -1,7 +1,6 @@
 @import './styles/styles.scss';
 
 body {
-  margin: 0;
   font-family: $fontFamily;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -94,6 +93,8 @@ code {
 
 #animation-container {
   position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   z-index: -1;
 }
@@ -176,11 +177,13 @@ input {
   background-color: $transparentBlueColor;
   border: $transparentBlueColor;
 }
-input::placeholder {
+
+input, input::placeholder {
   color: white;
-  font-size: 15px;
+  font-size: 23px;
   font-family: $fontFamily;
 }
+
 .input-search-container {
   display: flex;
   justify-content: center;
@@ -345,8 +348,10 @@ a {
   input {
     height: 10px;
   }
-  input::placeholder {
+  input, input::placeholder {
     font-size: 12px;
+    color: white;
+    font-family: $fontFamily;
   }
   .scroll-down {
     font-size: 13px;

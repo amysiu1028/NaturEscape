@@ -18,7 +18,7 @@ code {
 .main-page {
   width: 100vw;
   height: 100vh;
-  overflow-x: hidden; 
+  // overflow-x: hidden;  //changed this and now cypress testing works
 }
 
 .main-info-container {
@@ -28,10 +28,10 @@ code {
 }
 
 .pic-text-container p {
-  width: 80%;
+  width: 50%;
   height: 20%;
   margin: 0;
-  overflow: hidden;
+  // overflow: hidden;
 }
 
 .image-size {
@@ -196,6 +196,7 @@ button {
   padding: 10px 20px; 
 }
 
+.not-found-container, 
 .message-container, 
 .server-message-container, 
 .error-message {
@@ -206,7 +207,11 @@ button {
   text-shadow: -1px -1px 0 $containerColor, 1px -1px 0 $containerColor, -1px 1px 0 $containerColor, 1px 1px 0 $containerColor;
 }
 
-
+// .message-container, 
+.not-found-container,
+.server-message-container {
+  font-size: 30px
+}
 
 .server-message-container {
   margin-top: 50px;

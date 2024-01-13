@@ -40,7 +40,11 @@
     ]
   },
   "devDependencies": {
+    "@cypress/puppeteer": "^0.1.2",
     "cypress": "^13.6.2",
     "sass": "^1.69.7"
+  },
+  "compilerOptions": {
+    "types": ["cypress", "@cypress/puppeteer/support"]
   }
 }

@@ -7,7 +7,6 @@ export default function Header() {
     return (
       <div className='header-container'>
         <Link to='/'>
-          {console.log("logo",logo)}
             <img className='logo' data-test='logo' src={logo} alt='Logo states NatureEscape'></img>
         </Link>
         {/* try to italicize */}

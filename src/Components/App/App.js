@@ -86,8 +86,8 @@ function App() {
     <main className="main-page">
     <div ref={background} id="animation-container"></div>
     
-      {error ? <div className='server-message-container' >
-        <h2>Server is down, please try again later</h2> 
+      {error ? <div data-test='error-message' className='server-message-container' >
+        <h2>Server is down, please try again later.</h2> 
       </div> : (
         <Routes>
           <Route path="/" element={
@@ -115,7 +115,7 @@ function App() {
             </div>
           }
           />
-          <Route path='/parks/:id' element={
+          <Route path='/parks/:fullName' element={
           <>
             <Header/>
             <SingleParkDetail selectedParkDetail={selectedParkDetail}/>

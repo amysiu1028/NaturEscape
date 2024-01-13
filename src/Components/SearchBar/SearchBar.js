@@ -33,7 +33,7 @@ export default function SearchBar({searchParks, navigate}) {
           value={searchInput}
           onChange={(e) => setSearchInput(e.target.value)}
           ></input>
-          <button tabIndex={0} data-test='search-button' className='search-img-background' type="button" onClick={(event) => navigateHistory(event)} >
+          <button tabIndex='0' data-test='search-button' className='search-img-background' type="button" onClick={(event) => navigateHistory(event)} >
             <img data-test='search-icon' src={search} alt='Search Icon'></img>
           </button>
       </form>

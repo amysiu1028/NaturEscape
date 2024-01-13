@@ -46,10 +46,10 @@ https://github.com/amysiu1028/NaturEscape/assets/140124108/84015669-cbc9-4004-87
 - Detailed view for selected park or historic site with images, description, and additional information from the API
 
 ## 🥇 Wins
-⭐ Successfully designed a visually appealing application that is simple to use. 
-⭐ Successfully implemented favicon and logos to make the application professional.
-⭐ Overall, I have learned a lot more and challenged myself with things I struggled on my own, one of which included styling and some new cypress testing.
+- ⭐ Successfully designed a visually appealing application that is simple to use. 
+- ⭐ Successfully implemented favicon and logos to make the application professional.
+- ⭐ Overall, I have learned a lot more and challenged myself with things I struggled on my own, one of which included styling and some new cypress testing.
 
 ## 🚧 Challenges
-❗I challenged myself to make this project visually more appealing than previous projects. I have been able to implement and learn new styling methods. It took awhile at times, but going forward, I have learned more. 
-❗Noticed that I had a lot of nested html elements which made it difficult for some cypress testing. 
+- ❗ I challenged myself to make this project visually more appealing than previous projects. I have been able to implement and learn new styling methods. It took awhile at times, but going forward, I have learned more. 
+- ❗ Noticed that I had a lot of nested html elements which made it difficult for some cypress testing. 

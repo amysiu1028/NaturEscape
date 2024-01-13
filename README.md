@@ -2,7 +2,7 @@
 
 <div align="center">
   NaturEscape
-  ![Tests](https://badgen.net/badge/tests/passing/green?icon=github)
+ ![Tests](https://badgen.net/badge/tests/passing/green?icon=github)
 
   ## 💾 Technologies Used
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
@@ -28,10 +28,10 @@ Explore the beauty of nature and history with NaturEscape! On our main page, you
 This project was a self-driven solo endeavor, completed over approximately 35-40 hours. Working independently, I took on the challenge of designing and implementing NaturEscape, a web application focused on showcasing parks and historic sites. The project involved various tasks, including front-end development, integration of technologies like React, SCSS, Lottie Web, and backend setup using Express and Knex.js. The entire development process was managed and tracked individually, demonstrating self-motivation and dedication to the project's success. The completion of NaturEscape reflects the culmination of skills acquired and applied through a self-driven, solo project.
 
 ## 🎥 Preview 
-
+https://github.com/amysiu1028/NaturEscape/assets/140124108/84015669-cbc9-4004-8761-9b7396c3a3ea
 
 ## Link: 
-[Live Application Link](#) [Backend Repo](#)
+[Live NaturEscape Application Link](https://naturescape.vercel.app/) 
 
 ## 🔌 Setup
 1. Clone the repository: Open a terminal window. Navigate to the directory where you want to clone the repository: `git clone (git@github.com:amysiu1028/NaturEscape.git)`

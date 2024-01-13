@@ -1,19 +1,5 @@
-//for details page use"
-//- description
-//- activities
-//-can filter through for activities OR just favorite
-//-directions Info
-//-directions url
-//-designation - national historical parks
-// can filter by parks? historical?
-// weather info for visit
-//url website
-
-//to favorite: we will need the park id!
-//curl -X GET "https://developer.nps.gov/api/v1/campgrounds" -H "accept: application/json"
 import PropTypes from 'prop-types';
 import '../../index.scss'
-import './Parks.scss'
 import SinglePark from '../SinglePark/SinglePark'
 
 export default function Parks({parks, selectPark, navigate}) {
@@ -46,7 +32,7 @@ export default function Parks({parks, selectPark, navigate}) {
   )
 }
 
-//done
+
 Parks.propTypes = {
   parks: PropTypes.arrayOf(
     PropTypes.shape({

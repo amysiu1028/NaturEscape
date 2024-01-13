@@ -2,9 +2,8 @@ import './SearchBar.scss'
 import '../../index.scss'
 
 import PropTypes from 'prop-types';
-import { useState, useRef, useEffect } from 'react'
-// import { useState, useEffect, useRef } from 'react'
-import Scroll from "../Scoll/Scroll";
+import { useState } from 'react'
+import Scroll from "../Scroll/Scroll";
 import search from '../../images/search.png'
 
 export default function SearchBar({searchParks, navigate}) {
@@ -32,7 +31,6 @@ export default function SearchBar({searchParks, navigate}) {
           ></input>
           <button data-test='search-button' className='search-img-background' type="button" onClick={() => navigateHistory()} >
             <img data-test='search-icon' src={search} alt='Search Icon'></img>
-            {console.log("search",search)}
           </button>
       </form>
       {errorMessage && <h2 data-test='search-error-message' className='error-message'>{errorMessage}</h2>}

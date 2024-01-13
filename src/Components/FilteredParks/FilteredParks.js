@@ -1,11 +1,9 @@
 import PropTypes from 'prop-types';
 import '../../index.scss'
-import './FilteredParks.scss'
 import SinglePark from "../SinglePark/SinglePark"
 import { Link } from 'react-router-dom'
 
 export default function FilteredParks({filteredParks, selectPark, navigate}) {
-    console.log("filteredParks",filteredParks)
     const displayFilteredParks = filteredParks.map((park) => {
         return (
             <SinglePark
@@ -54,19 +52,30 @@ FilteredParks.propTypes = {
     fullName: PropTypes.string.isRequired,
     parkCode: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
-    addressLine: PropTypes.string.isRequired,
-    city: PropTypes.string.isRequired,
-    stateCode: PropTypes.string.isRequired,
-    postalCode: PropTypes.string.isRequired,
-    countryCode: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
-    altImageText: PropTypes.string.isRequired,
-    imageCaption: PropTypes.string.isRequired,
-    imageTitle: PropTypes.string.isRequired,
-    id: PropTypes.string.isRequired,
-    key: PropTypes.string.isRequired,
-    selectPark: PropTypes.string.isRequired
+    addresses: PropTypes.arrayOf( 
+      PropTypes.shape({
+        city: PropTypes.string.isRequired,
+        stateCode: PropTypes.string.isRequired,
+        postalCode: PropTypes.string.isRequired,
+        countryCode: PropTypes.string.isRequired,
+    })).isRequired,
+    images: PropTypes.arrayOf( 
+      PropTypes.shape({
+        altImageText: PropTypes.string,
+        imageCaption: PropTypes.string,
+        imageTitle: PropTypes.string,
+    })),
   })).isRequired,
-  selectPark: PropTypes.func.isRequired,
+  selectPark: PropTypes.func,
   navigate: PropTypes.func.isRequired
 }
+
+FilteredParks.defaultProps = {
+  images: PropTypes.arrayOf( 
+    PropTypes.shape({
+      altImageText: undefined,
+      imageCaption: undefined,
+      imageTitle: undefined,
+  })),
+  selectPark: undefined
+};

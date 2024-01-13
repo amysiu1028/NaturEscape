@@ -1,9 +1,10 @@
 import './Scroll.scss'
+import '../../index.scss'
+
 import {  useRef, useEffect } from 'react'
 import lottie from "lottie-web";
 
 function Scroll() {
-
 const scrolldown = useRef(null); 
     useEffect(() => {
         lottie.loadAnimation({
@@ -17,11 +18,8 @@ const scrolldown = useRef(null);
 
   return (
     <div className='form-scroll-container'>
-        {/* <div className="text-scroll-container"> */}
             <h2 className='scroll-down' data-test='scroll-down'>SCROLL DOWN</h2>
-            {console.log("scrolldown",scrolldown)}
             <div data-test='scroll-arrow' ref={scrolldown} id="scroll-container"></div>
-        {/* </div> */}
     </div>
   )
 }

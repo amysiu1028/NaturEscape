@@ -1,6 +1,7 @@
 # NaturEscape
 
 <div align="center">
+  
   NaturEscape
  ![Tests](https://badgen.net/badge/tests/passing/green?icon=github)
 

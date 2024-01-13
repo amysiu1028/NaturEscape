@@ -4,12 +4,15 @@ import { Link } from 'react-router-dom'
 
 export default function SinglePark({fullName, addressLine, city, stateCode, postalCode, image, altImageText, imageCaption, imageTitle, selectPark, id, navigate}) {
   
+  const handleClick = (event) => {
+    if (event.key === 'Enter' || event.keyCode === 13) {
+      selectPark(id);
+      navigate(`/parks/${id}`);
+    }
+  }
     return (
       <Link to={`/parks/${fullName}`}>
-      <button data-test='main-park-button' type='button' className='main-info-container' onClick={() => {
-        selectPark(id);
-        navigate(`/parks/${id}`);
-      }}>
+      <button tabIndex='0' data-test='main-park-button' type='button' className='main-info-container' onClick={(event) => {handleClick(event)}}>
         <h2>{fullName}</h2>
         <div className="pic-text-container"> 
           <img data-test='mainpage-image' className='main-image-size'  

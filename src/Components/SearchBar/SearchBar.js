@@ -9,13 +9,17 @@ import search from '../../images/search.png'
 export default function SearchBar({searchParks, navigate}) {
     const [ searchInput, setSearchInput ] = useState("")
     const [ errorMessage, setErrorMessage ] = useState("")
-    function navigateHistory() {
+    function navigateHistory(event) {
       if (searchInput === '' || searchInput === ' ') {
-        setErrorMessage('Please fill out search input.')
+        if  (event.key === 'Enter' || event.keyCode === 13) {
+          setErrorMessage('Please fill out search input.')
+        }
       } else {
-        setErrorMessage('')
-        searchParks(searchInput)
-        navigate(`/${searchInput}`)
+        if (event.key === 'Enter' || event.keyCode === 13) {
+          setErrorMessage('')
+          searchParks(searchInput)
+          navigate(`/${searchInput}`)
+        }
       }
     }
 
@@ -29,7 +33,7 @@ export default function SearchBar({searchParks, navigate}) {
           value={searchInput}
           onChange={(e) => setSearchInput(e.target.value)}
           ></input>
-          <button data-test='search-button' className='search-img-background' type="button" onClick={() => navigateHistory()} >
+          <button tabIndex='0' data-test='search-button' className='search-img-background' type="button" onClick={(event) => navigateHistory(event)} >
             <img data-test='search-icon' src={search} alt='Search Icon'></img>
           </button>
       </form>

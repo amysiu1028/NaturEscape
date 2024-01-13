@@ -1,22 +1,3 @@
-//Next steps:
-//cypress testing
-
-//responsive design: check texts are viewable when page gets smaller
-//README
-// Be deployed using Vercel, Heroku, Surge, or any other similar service
-
-//Extra: 
-//add location search feature
-//add visited, want to visit section vs favorite?
-//when click search, can write, there are parks.length number of searches for 'this input'
-
-//When done:
-//research and ask about CSS - how to get better:
-//scroll-container:     left: 65%;   transform: translateX(-50%);
-//// Using left: 50% sets the left edge of the element to the middle of its containing element, and transform: translateX(-50%) then shifts the element horizontally by half of its own width in the reverse direction. This combination effectively centers the element horizontally.
-//async javascript - try to understand async and await more 
-//favoriting and visited, checked! Add and find out how to do?
-
 import '../../index.scss'
 import lottie from "lottie-web";
 import { getParkData } from '../../ApiCalls';
@@ -28,14 +9,13 @@ import { Routes, Route, useNavigate } from 'react-router-dom'
 import FilteredParks from '../FilteredParks/FilteredParks';
 import SingleParkDetail from '../SingleParkDetail/SingleParkDetail';
 import NotFound from '../NotFound/NotFound';
-import Scroll from '../Scoll/Scroll';
+import Scroll from '../Scroll/Scroll';
 
 function App() {
   const [ parks, setParks ] = useState([])
   const [ filteredParks, setFilteredParks ] = useState([])
   const [ error, setError ] = useState("")
 
-  // in many cases, it's often better to initialize state with null rather than an empty string ("") or an empty object ({}) if you want to represent an absence of data or an uninitialized state. 
   const [ selectedParkDetail, setSelectedParkDetail] = useState(null)
   const navigate = useNavigate();
 
@@ -43,8 +23,6 @@ function App() {
     getParkData()
     .then(parksData => {
       setParks(parksData.data)
-      console.log("parks",parks)
-      // setFilteredParks(parks.data) //starts off with all the data first
     })
     .catch(error => {
       setError(error)
@@ -63,32 +41,24 @@ function App() {
   }, [])
 
   function searchParks(searchInput) {
-    //  console.log("single Search input:",searchInput)
     const filterThroughParks = parks.filter((park) => {
-      // console.log("park.full.toLowercase()", park.fullName.toLowerCase())
-      // console.log("searchInput.toLowerCase()", searchInput.toLowerCase())
         return park.fullName.toLowerCase().includes(searchInput.toLowerCase())
       })
-    // })
     setFilteredParks(filterThroughParks)
   }
-
-  //is there a way to search by starting letter? and by word including, so when I search by the first letter, it'll show me all the ones that start with a? and b, and then if I type
 
   function selectPark(id) {
     const selectedPark = parks.find((park) => park.id === id)
     setSelectedParkDetail(selectedPark)
   }
-  
-  console.log("selectedParkDetail in App",selectedParkDetail)
- 
+   
   return (
     <main className="main-page">
     <div ref={background} id="animation-container"></div>
-    
-      {error ? <div data-test='error-message' className='server-message-container' >
-        <h2>Server is down, please try again later.</h2> 
-      </div> : (
+      {error ? 
+        (<div data-test='error-message' className='server-message-container' >
+          <h2>Server is down, please try again later.</h2> 
+        </div>) : (
         <Routes>
           <Route path="/" element={
               <div className='wrap-header-search'>
@@ -99,28 +69,26 @@ function App() {
                   <Parks parks={parks} selectPark={selectPark} navigate={navigate}/>
                 </div>
               </div>
-            }
-          />
+            }/>
           <Route path='/:filtered' element={
             <div className='wrap-header-search'h>
                   <Header />
                   {/* <SearchBar searchParks={searchParks} navigate={navigate}/> */}
                   <p data-test='filtered-scroll-message' className='welcome-message'>Scroll down below to view and click onto your searched destination</p>
                   <div className='scroll-on-filteredpage'>
-                    <Scroll/>
+                  <Scroll/>
                   </div>
               <div>
                 <FilteredParks filteredParks={filteredParks} selectPark={selectPark} navigate={navigate} />
               </div>
             </div>
-          }
-          />
+          }/>
           <Route path='/parks/:fullName' element={
-          <>
-            <Header/>
-            <SingleParkDetail selectedParkDetail={selectedParkDetail}/>
-          </>
-        }/>
+            <>
+              <Header/>
+              <SingleParkDetail selectedParkDetail={selectedParkDetail}/>
+            </>
+          }/>
           <Route path='/parks/*' element={<NotFound/>}/>
         </Routes>
       )}

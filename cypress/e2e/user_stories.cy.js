@@ -163,7 +163,6 @@ describe('Display Filtered Parks Page With Specific Search Input', () => {
     })
 
     it('should display the rest of parks details', () => {
-      //not sure why simplified version doesn't work? Review?
       cy.get('.park-detail-text-container')
         .contains('h2','Abraham Lincoln Birthplace National Historical Park')
       cy.get('.park-detail-text-container')

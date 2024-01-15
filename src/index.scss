@@ -293,7 +293,7 @@ a {
     width: 65vw;
   }
   .parkdetail-back-to-home-button {
-    transform: translateX(95%);
+    transform: translateX(135%);
   }
 }
 
@@ -303,7 +303,7 @@ a {
   }
   .main-info-container {
     width: 70vw;
-    height: 60vh;
+    height: 80vh;
   }
   .main-image-size {
     width: 50vw;
@@ -334,6 +334,9 @@ a {
     width: 46vw;
     height: 25vh;
   } 
+  .parkdetail-back-to-home-button {
+    transform: translateX(91%);
+  }
 }
 
 @media (max-width: 708px) {
@@ -367,7 +370,7 @@ a {
   }
   .main-info-container {
     width: 70vw;
-    height: 80vh;
+    height: 110vh;
   }
   .main-image-size {
     width: 55vw;
@@ -418,6 +421,9 @@ a {
   .image-slider {
    padding: 0px;
   }
+  .parkdetail-back-to-home-button {
+    transform: translateX(55%);
+  }
 }
 
 
@@ -436,5 +442,12 @@ a {
   }
   .image-slider {
    padding: 0px;
+  }
+  .parkdetail-back-to-home-button {
+    transform: translateX(25%);
+  }
+  .main-info-container {
+    width: 70vw;
+    height: 110vh;
   }
 }

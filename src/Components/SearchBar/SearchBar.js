@@ -11,11 +11,11 @@ export default function SearchBar({searchParks, navigate}) {
     const [ errorMessage, setErrorMessage ] = useState("")
     function navigateHistory(event) {
       if (searchInput === '' || searchInput === ' ') {
-        if  (event.key === 'Enter' || event.keyCode === 13) {
+        if  (event.key === 'Enter' || event.keyCode === 13 || event.type === "click") {
           setErrorMessage('Please fill out search input.')
         }
       } else {
-        if (event.key === 'Enter' || event.keyCode === 13) {
+        if (event.key === 'Enter' || event.keyCode === 13 || event.type === "click") {
           setErrorMessage('')
           searchParks(searchInput)
           navigate(`/${searchInput}`)

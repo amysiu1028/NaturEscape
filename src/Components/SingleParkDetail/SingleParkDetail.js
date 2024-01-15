@@ -69,7 +69,7 @@ export default function SingleParkDetail({selectedParkDetail}) {
             </section>
             <section className='park-detail-text-container'>
                 <h2>{selectedParkDetail.fullName}</h2>
-                <h3>ParkCode: {selectedParkDetail.parkCode}</h3>
+                <h3>PrkCode: {selectedParkDetail.parkCode}</h3>
                 <h4>History:</h4>
                 <p>{selectedParkDetail.description}</p>
                 <h4>Directions:</h4>

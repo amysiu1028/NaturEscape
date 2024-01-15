@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 export default function SinglePark({fullName, addressLine, city, stateCode, postalCode, image, altImageText, imageCaption, imageTitle, selectPark, id, navigate}) {
   
   const handleClick = (event) => {
-    if (event.key === 'Enter' || event.keyCode === 13) {
+    if (event.key === 'Enter' || event.keyCode === 13 || event.type === 'click') {
       selectPark(id);
       navigate(`/parks/${id}`);
     }

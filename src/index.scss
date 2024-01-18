@@ -143,7 +143,7 @@ code {
 button {
   font-family: $fontFamily;
   color: white;
-  outline: none;
+  // outline: none;
   border: 2px solid $transparentBlueColor; 
   padding: 10px 20px; 
 }
@@ -391,6 +391,7 @@ a {
     display: block; 
     margin: auto;  
   }
+  
   .search-img-background {
     width: 50px;
     height: 50px;
